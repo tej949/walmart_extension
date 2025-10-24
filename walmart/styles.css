@@ -1,0 +1,221 @@
+/* Modern Material Design styles for the extension popup */
+
+/* Base styles and variables */
+:root {
+  --primary-color: #0071dc;
+  --primary-light: #e6f2ff;
+  --success-color: #2ecc71;
+  --error-color: #e74c3c;
+  --text-primary: #2c3e50;
+  --text-secondary: #7f8c8d;
+  --background-color: #ffffff;
+  --card-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --transition-speed: 0.3s;
+}
+
+body {
+  width: 400px;
+  margin: 0;
+  padding: 20px;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-primary);
+}
+
+/* Header styles */
+.header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.header h1 {
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--primary-color);
+  margin: 0 0 8px 0;
+}
+
+/* Status card styles */
+.status-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 24px;
+  box-shadow: var(--card-shadow);
+  transition: transform var(--transition-speed) ease, opacity var(--transition-speed) ease;
+}
+
+.status-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.status-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 12px;
+  transition: background-color var(--transition-speed) ease;
+}
+
+.status-dot.active {
+  background-color: var(--success-color);
+  box-shadow: 0 0 8px rgba(46, 204, 113, 0.4);
+}
+
+.status-dot.inactive {
+  background-color: var(--error-color);
+  box-shadow: 0 0 8px rgba(231, 76, 60, 0.4);
+}
+
+.status-text {
+  font-size: 16px;
+  font-weight: 500;
+  transition: opacity var(--transition-speed) ease, transform var(--transition-speed) ease;
+}
+
+.location-status {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin-top: 8px;
+  transition: opacity var(--transition-speed) ease, transform var(--transition-speed) ease;
+}
+
+/* Device info styles */
+.device-info {
+  background-color: var(--primary-light);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 24px;
+}
+
+.device-info h2 {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0 0 8px 0;
+  color: var(--primary-color);
+}
+
+.device-id {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 14px;
+  color: var(--text-secondary);
+  word-break: break-all;
+  transition: opacity var(--transition-speed) ease;
+}
+
+/* Button styles */
+.button-container {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.button {
+  flex: 1;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: background-color var(--transition-speed) ease;
+}
+
+.button-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.button-primary:hover {
+  background-color: #005bb1;
+}
+
+.button-secondary {
+  background-color: #f2f2f2;
+  color: var(--text-primary);
+}
+
+.button-secondary:hover {
+  background-color: #e6e6e6;
+}
+
+/* Ripple effect */
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.7);
+  transform: scale(0);
+  animation: ripple 0.6s linear;
+  pointer-events: none;
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* QR code container styles */
+.qr-container {
+  display: none;
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: var(--card-shadow);
+  transition: opacity var(--transition-speed) ease, transform var(--transition-speed) ease;
+}
+
+.qr-code {
+  margin: 20px 0;
+}
+
+.qr-code img {
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+}
+
+.enrollment-link {
+  font-size: 14px;
+  color: var(--text-secondary);
+  word-break: break-all;
+  margin-top: 16px;
+  transition: opacity var(--transition-speed) ease;
+}
+
+/* Error message styles */
+.error-message {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  background-color: var(--error-color);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(231, 76, 60, 0.4);
+  align-items: center;
+  justify-content: space-between;
+  transition: opacity var(--transition-speed) ease, transform var(--transition-speed) ease;
+}
+
+.error-text {
+  font-size: 14px;
+  margin-right: 12px;
+}
+
+.error-close {
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity var(--transition-speed) ease;
+}
+
+.error-close:hover {
+  opacity: 1;
+}

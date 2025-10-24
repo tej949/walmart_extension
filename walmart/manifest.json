@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "Secure Shopping Context Attestation",
+  "version": "1.0",
+  "description": "Secure context attestation and fraud prevention system for online shopping using sensor fusion and ZKP tokens",
+  "permissions": [
+    "geolocation",
+    "storage",
+    "webNavigation"
+  ],
+  "host_permissions": [
+    "https://*.walmart.com/*",
+    "https://*.amazon.com/*",
+    "https://*.target.com/*",
+    "https://*.bestbuy.com/*",
+    "https://*.ebay.com/*",
+    "https://*.costco.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [{
+    "matches": [
+      "https://*.walmart.com/*",
+      "https://*.amazon.com/*",
+      "https://*.target.com/*",
+      "https://*.bestbuy.com/*",
+      "https://*.ebay.com/*",
+      "https://*.costco.com/*"
+    ],
+    "js": ["content.js"]
+  }],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}

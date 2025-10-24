@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Walmart Secure Context Attestation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Roboto+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <div class="header">
+    <h1>Secure Context Attestation</h1>
+  </div>
+
+  <!-- Status Card -->
+  <div class="status-card">
+    <div class="status-info">
+      <div id="statusDot" class="status-dot inactive"></div>
+      <div id="statusText" class="status-text">Checking Status...</div>
+    </div>
+    <div id="locationStatus" class="location-status">Location: Checking...</div>
+  </div>
+
+  <!-- Device Information -->
+  <div class="device-info">
+    <h2>Device Information</h2>
+    <div id="deviceId" class="device-id">Loading device ID...</div>
+  </div>
+
+  <!-- Action Buttons -->
+  <div class="button-container">
+    <button id="enrollDevice" class="button button-primary">
+      Enroll Device
+    </button>
+    <button id="revokeDevice" class="button button-secondary">
+      Revoke Device
+    </button>
+  </div>
+
+  <!-- QR Code Container -->
+  <div id="qrContainer" class="qr-container">
+    <h2>Scan QR Code</h2>
+    <div id="qrCode" class="qr-code"></div>
+    <div id="enrollmentLink" class="enrollment-link"></div>
+  </div>
+
+  <!-- Error Message -->
+  <div id="errorMessage" class="error-message">
+    <span id="errorText" class="error-text"></span>
+    <span class="material-icons error-close">close</span>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
